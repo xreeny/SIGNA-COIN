@@ -130,7 +130,7 @@ BEGIN_SDK
    link(Str1,15139202:IPadres,[(293,63)(27,63)])
    link(Str2,15139202:Port,[(300,50)(34,50)])
   }
-  Add(LineBreak,7358866,210,224)
+  Add(LineBreak,7128528,210,224)
   {
    link(Out,12834392:doClear,[(327,230)(327,195)])
    Primary=[1239950,7,-63]
@@ -214,40 +214,40 @@ BEGIN_SDK
   Add(Memory,15480270,777,273)
   {
   }
-  Add(LineBreak,4331365,560,413)
+  Add(LineBreak,16339327,560,413)
   {
    link(Out,6233141:doCompare,[])
    Primary=[12915525,119,-133]
   }
-  Add(LineBreak,5763877,560,546)
+  Add(LineBreak,10331678,560,546)
   {
    link(Out,12577997:doCompare,[])
    Primary=[16074539,119,-126]
   }
-  Add(LineBreak,8519453,560,707)
+  Add(LineBreak,7479355,560,707)
   {
    link(Out,7789139:doCompare,[])
    Primary=[740501,105,-154]
   }
-  Add(LineBreak,4378870,770,469)
+  Add(LineBreak,10531297,770,469)
   {
    Type=1
    link(Data,16245449:Value,[])
    Primary=[7808600,-693,266]
   }
-  Add(LineBreak,2746438,770,595)
+  Add(LineBreak,10012033,770,595)
   {
    Type=1
    link(Data,13430840:Value,[])
    Primary=[14022477,-679,161]
   }
-  Add(LineBreak,16687932,777,322)
+  Add(LineBreak,8183960,777,322)
   {
    Type=1
    link(Data,15480270:Value,[])
    Primary=[12690098,-672,455]
   }
-  Add(LineBreak,2636288,777,756)
+  Add(LineBreak,2741456,777,756)
   {
    Type=1
    link(Data,12806602:Value,[])
@@ -318,13 +318,13 @@ BEGIN_SDK
      link(onFString,13138750:In,[])
      link(Str1,10222757:StreamName,[(566,156)(419,156)])
     }
-    Add(LineBreak,5206623,252,217)
+    Add(LineBreak,2019688,252,217)
     {
      Type=1
      link(Data,1027532:Var2,[])
      Primary=[15716375,154,-21]
     }
-    Add(LineBreak,1338984,308,231)
+    Add(LineBreak,5292936,308,231)
     {
      link(Out,16582589:doRead,[])
      Primary=[13138750,322,-84]
@@ -350,7 +350,7 @@ BEGIN_SDK
      link(onEvent1,6084421:doCopyFromStream,[])
      link(onEvent2,16381762:doTimer,[(504,244)(504,321)])
     }
-    Add(LineBreak,9596233,224,413)
+    Add(LineBreak,3098799,224,413)
     {
      link(Out,1694876:In,[])
      Primary=[16464098,392,-98]
@@ -361,7 +361,7 @@ BEGIN_SDK
      AutoStop=1
      link(onTimer,16464098:In,[])
     }
-    Add(LineBreak,8820019,63,147)
+    Add(LineBreak,9168643,63,147)
     {
      link(Out,5438335:doEvent2,[(165,153)(165,111)])
      Primary=[1694876,350,266]
@@ -425,9 +425,11 @@ BEGIN_SDK
   }
   Add(HTTPClient,3770920,322,168)
   {
+   CookieManager="cook"
   }
-  Add(CookieManager,2290267,315,441)
+  Add(CookieManager,2290267,259,336)
   {
+   Name="cook"
   }
 END_SDK
 Add(InfoTip,14666405,616,455)
