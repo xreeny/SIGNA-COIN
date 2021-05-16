@@ -11,6 +11,14 @@ Add(MultiElement,802942,1148,546)
 BEGIN_SDK
   Add(EditMulti,14676407,21,21)
   {
+   Width=1385
+   Height=858
+  }
+  Add(InfoTip,15191771,896,56)
+  {
+   Info=#25:Обновление Цепочки блоков|
+   Width=463
+   Height=256
   }
 END_SDK
 Add(MultiElement,10905844,1141,882)
@@ -19,6 +27,8 @@ Add(MultiElement,10905844,1141,882)
 BEGIN_SDK
   Add(EditMulti,5213957,21,21)
   {
+   Width=1294
+   Height=550
   }
 END_SDK
 Add(InfoTip,500357,224,427)
@@ -117,7 +127,7 @@ BEGIN_SDK
    link(Str1,15139202:IPadres,[(293,63)(27,63)])
    link(Str2,15139202:Port,[(300,50)(34,50)])
   }
-  Add(LineBreak,15789209,210,224)
+  Add(LineBreak,3346800,210,224)
   {
    link(Out,12834392:doClear,[(327,230)(327,195)])
    Primary=[1239950,7,-63]
@@ -201,40 +211,40 @@ BEGIN_SDK
   Add(Memory,15480270,777,273)
   {
   }
-  Add(LineBreak,14006124,560,413)
+  Add(LineBreak,16532657,560,413)
   {
    link(Out,6233141:doCompare,[])
    Primary=[12915525,119,-133]
   }
-  Add(LineBreak,14800831,560,546)
+  Add(LineBreak,7082877,560,546)
   {
    link(Out,12577997:doCompare,[])
    Primary=[16074539,119,-126]
   }
-  Add(LineBreak,6691936,560,707)
+  Add(LineBreak,12596746,560,707)
   {
    link(Out,7789139:doCompare,[])
    Primary=[740501,105,-154]
   }
-  Add(LineBreak,9417370,770,469)
+  Add(LineBreak,6991282,770,469)
   {
    Type=1
    link(Data,16245449:Value,[])
    Primary=[7808600,-693,266]
   }
-  Add(LineBreak,7023902,770,595)
+  Add(LineBreak,10062446,770,595)
   {
    Type=1
    link(Data,13430840:Value,[])
    Primary=[14022477,-679,161]
   }
-  Add(LineBreak,15588009,777,322)
+  Add(LineBreak,12339806,777,322)
   {
    Type=1
    link(Data,15480270:Value,[])
    Primary=[12690098,-672,455]
   }
-  Add(LineBreak,14121765,777,756)
+  Add(LineBreak,8866657,777,756)
   {
    Type=1
    link(Data,12806602:Value,[])
@@ -305,13 +315,13 @@ BEGIN_SDK
      link(onFString,13138750:In,[])
      link(Str1,10222757:StreamName,[(566,156)(419,156)])
     }
-    Add(LineBreak,14865741,252,217)
+    Add(LineBreak,13595321,252,217)
     {
      Type=1
      link(Data,1027532:Var2,[])
      Primary=[15716375,154,-21]
     }
-    Add(LineBreak,4654184,308,231)
+    Add(LineBreak,4358914,308,231)
     {
      link(Out,16582589:doRead,[])
      Primary=[13138750,322,-84]
@@ -337,7 +347,7 @@ BEGIN_SDK
      link(onEvent1,6084421:doCopyFromStream,[])
      link(onEvent2,16381762:doTimer,[(504,244)(504,321)])
     }
-    Add(LineBreak,15533180,224,413)
+    Add(LineBreak,5673602,224,413)
     {
      link(Out,1694876:In,[])
      Primary=[16464098,392,-98]
@@ -348,7 +358,7 @@ BEGIN_SDK
      AutoStop=1
      link(onTimer,16464098:In,[])
     }
-    Add(LineBreak,10825360,63,147)
+    Add(LineBreak,8709736,63,147)
     {
      link(Out,5438335:doEvent2,[(165,153)(165,111)])
      Primary=[1694876,350,266]
@@ -389,7 +399,7 @@ Add(InfoTip,10410806,35,770)
  Width=883
  Height=277
 }
-Add(MultiElement,15377560,182,875)
+Add(MultiElement,15377560,217,875)
 {
 }
 BEGIN_SDK
