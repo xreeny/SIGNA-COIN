@@ -1,61 +1,10 @@
 Make(delphi)
 ver(4.05 build 186)
-Add(MainForm,2953706,259,1155)
-{
- Caption="Signa Coin"
- Position=1
-}
-Add(MultiElement,802942,1148,546)
+Add(DLL,2953706,343,224)
 {
 }
-BEGIN_SDK
-  Add(EditMulti,14676407,21,21)
-  {
-   Width=1385
-   Height=858
-  }
-  Add(InfoTip,15191771,896,56)
-  {
-   Info=#25:Обновление Цепочки блоков|
-   Width=463
-   Height=256
-  }
-END_SDK
-Add(MultiElement,10905844,1141,882)
+Add(MultiElementEx,14027658,441,224)
 {
-}
-BEGIN_SDK
-  Add(EditMulti,5213957,21,21)
-  {
-   Width=1294
-   Height=550
-  }
-END_SDK
-Add(InfoTip,500357,224,427)
-{
- Info=#35:Блок Upnp (проброс порта TCP/UDP)  |
- Font=[MS Sans Serif,10,1,0,1]
- Width=694
- Height=298
-}
-Add(InfoTip,16161410,987,1078)
-{
- Info=#13:Блок майнинга|
- Font=[MS Sans Serif,10,1,0,1]
- Width=1149
- Height=718
-}
-Add(InfoTip,7262653,987,770)
-{
- Info=#15:Блок транзакций|
- Font=[MS Sans Serif,10,1,0,1]
- Width=897
- Height=277
-}
-Add(MultiElementEx,14027658,336,490)
-{
- link(IPadres,1030670:Value,[(342,474)(272,474)])
- link(Port,2246978:Value,[(349,478)(356,478)])
 }
 BEGIN_SDK
   Add(EditMultiEx,15139202,21,21)
@@ -65,6 +14,7 @@ BEGIN_SDK
    DataCount=#33:IPadres=IP адрес в локальной сети|36:Port=Порт который необходимо открыть|
    Width=1147
    Height=823
+   link(doOpenPort,3006749:doEvent1,[(42,27)(42,174)])
    link(LocalIP,7808600:Var,[(27,796)(83,796)])
    link(LocaLIP:Port,14022477:Var,[(34,807)(97,807)])
    link(IP,12690098:Var,[(41,821)(111,821)])
@@ -78,7 +28,6 @@ BEGIN_SDK
   Add(WinExec,16082486,280,168)
   {
    FileName="res\oupt.df"
-   Mode=0
    Point(doConsoleExec)
    Point(onConsoleResult)
    Point(onConsoleTerminate)
@@ -101,7 +50,7 @@ BEGIN_SDK
   {
    ReplaceList="Local LAN ip address : #LocalIP = ;\r\nExternalIPAddress = #ExternalIP = ;\r\nInternalIPort = #LocalipIPPort = ;\r\nexternal #ExternalIPPort = ;"
    Delimiter="#"
-   link(onResult,15701512:doMessage,[(527,279)(527,216)])
+   link(onResult,7243674:doSplit,[])
   }
   Add(Hub,3006749,63,168)
   {
@@ -130,7 +79,7 @@ BEGIN_SDK
    link(Str1,15139202:IPadres,[(293,63)(27,63)])
    link(Str2,15139202:Port,[(300,50)(34,50)])
   }
-  Add(LineBreak,7358866,210,224)
+  Add(LineBreak,16208023,210,224)
   {
    link(Out,12834392:doClear,[(327,230)(327,195)])
    Primary=[1239950,7,-63]
@@ -214,40 +163,40 @@ BEGIN_SDK
   Add(Memory,15480270,777,273)
   {
   }
-  Add(LineBreak,4331365,560,413)
+  Add(LineBreak,4345673,560,413)
   {
    link(Out,6233141:doCompare,[])
    Primary=[12915525,119,-133]
   }
-  Add(LineBreak,5763877,560,546)
+  Add(LineBreak,4432534,560,546)
   {
    link(Out,12577997:doCompare,[])
    Primary=[16074539,119,-126]
   }
-  Add(LineBreak,8519453,560,707)
+  Add(LineBreak,15684668,560,707)
   {
    link(Out,7789139:doCompare,[])
    Primary=[740501,105,-154]
   }
-  Add(LineBreak,4378870,770,469)
+  Add(LineBreak,7975469,770,469)
   {
    Type=1
    link(Data,16245449:Value,[])
    Primary=[7808600,-693,266]
   }
-  Add(LineBreak,2746438,770,595)
+  Add(LineBreak,3003494,770,595)
   {
    Type=1
    link(Data,13430840:Value,[])
    Primary=[14022477,-679,161]
   }
-  Add(LineBreak,16687932,777,322)
+  Add(LineBreak,4722199,777,322)
   {
    Type=1
    link(Data,15480270:Value,[])
    Primary=[12690098,-672,455]
   }
-  Add(LineBreak,2636288,777,756)
+  Add(LineBreak,14370672,777,756)
   {
    Type=1
    link(Data,12806602:Value,[])
@@ -318,13 +267,13 @@ BEGIN_SDK
      link(onFString,13138750:In,[])
      link(Str1,10222757:StreamName,[(566,156)(419,156)])
     }
-    Add(LineBreak,5206623,252,217)
+    Add(LineBreak,2775273,252,217)
     {
      Type=1
      link(Data,1027532:Var2,[])
      Primary=[15716375,154,-21]
     }
-    Add(LineBreak,1338984,308,231)
+    Add(LineBreak,8662935,308,231)
     {
      link(Out,16582589:doRead,[])
      Primary=[13138750,322,-84]
@@ -350,7 +299,7 @@ BEGIN_SDK
      link(onEvent1,6084421:doCopyFromStream,[])
      link(onEvent2,16381762:doTimer,[(504,244)(504,321)])
     }
-    Add(LineBreak,9596233,224,413)
+    Add(LineBreak,11494817,224,413)
     {
      link(Out,1694876:In,[])
      Primary=[16464098,392,-98]
@@ -361,7 +310,7 @@ BEGIN_SDK
      AutoStop=1
      link(onTimer,16464098:In,[])
     }
-    Add(LineBreak,8820019,63,147)
+    Add(LineBreak,1973000,63,147)
     {
      link(Out,5438335:doEvent2,[(165,153)(165,111)])
      Primary=[1694876,350,266]
@@ -379,116 +328,4 @@ BEGIN_SDK
      link(onEvent2,10222757:doGetName,[])
     }
   END_SDK
-  Add(Timer,14304936,56,224)
-  {
-   AutoStop=1
-   link(onTimer,3006749:doEvent1,[(100,230)(100,202)(51,202)(51,174)])
-  }
-  Add(Message,15701512,553,210)
-  {
-  }
 END_SDK
-Add(InfoTip,3028636,987,427)
-{
- Info=#28:Синхранизации цепочки блоков|
- Font=[MS Sans Serif,10,1,0,1]
- Width=897
- Height=298
-}
-Add(MultiElement,6936459,1152,1236)
-{
-}
-BEGIN_SDK
-  Add(EditMulti,11861641,21,21)
-  {
-  }
-END_SDK
-Add(InfoTip,10410806,35,770)
-{
- Info=#18:Блок Сервер/Клиент|
- Font=[MS Sans Serif,10,1,0,1]
- Width=883
- Height=277
-}
-Add(MultiElement,15377560,287,868)
-{
-}
-BEGIN_SDK
-  Add(EditMulti,11398462,21,21)
-  {
-   Width=1021
-   Height=746
-  }
-  Add(TCPServer,11736489,525,308)
-  {
-   Port=49111
-  }
-  Add(HTTPClient,3770920,322,168)
-  {
-  }
-  Add(CookieManager,2290267,315,441)
-  {
-  }
-END_SDK
-Add(InfoTip,14666405,616,455)
-{
- Info=#60:1) Не закончил распаковку файлов для проброса портов(массив)|
- Transparent=1
- HAlign=0
- Width=281
- Height=256
- Margin=5
-}
-Add(InfoTip,15443311,35,1078)
-{
- Info=#19:Интерфэйс программы|
- Font=[MS Sans Serif,10,1,0,1]
- Width=883
- Height=718
-}
-Add(Version,15504563,42,455)
-{
- Version="1.0"
- Description="Signature Coin"
- InternalName="Signa Coin"
-}
-Add(StyleXP,12378030,42,504)
-{
-}
-Add(InfoTip,11861959,28,427)
-{
- Info=#8:Контролы|
- Width=183
- Height=298
-}
-Add(InfoTip,15580746,518,14)
-{
- Info=#6:Задачи|
- Font=[MS Sans Serif,8,1,0,1]
- Transparent=1
- HAlign=0
- Width=890
- Height=396
- Margin=5
-}
-Add(InfoTip,8658157,28,14)
-{
- Info=#58:                                                Информация|0:|23:Правила видение проекта|39:Перед тем как поделиться частью схеммы |0:|0:|65:1) Папка "res" сокрощенно "ресурсы" необходима для дополнительных|83:расширений например сейчас в ней находится консольная программа для проброса портов|
- Font=[MS Sans Serif,8,1,0,1]
- Transparent=1
- HAlign=0
- Width=456
- Height=396
- Margin=5
-}
-Add(Type_Create,7897556,147,644)
-{
-}
-Add(Memory,1030670,266,427)
-{
- Default=String(192.168.1.8)
-}
-Add(Memory,2246978,350,434)
-{
- Default=Integer(49111)
-}
