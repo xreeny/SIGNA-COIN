@@ -161,7 +161,7 @@ BEGIN_SDK
    link(Str1,15139202:IPadres,[(293,63)(27,63)])
    link(Str2,15139202:Port,[(300,50)(34,50)])
   }
-  Add(LineBreak,13825195,210,224)
+  Add(LineBreak,9157257,210,224)
   {
    link(Out,12834392:doClear,[(327,230)(327,195)])
    Primary=[1239950,7,-63]
@@ -245,46 +245,46 @@ BEGIN_SDK
   Add(Memory,15480270,777,273)
   {
   }
-  Add(LineBreak,7448450,560,413)
+  Add(LineBreak,16619989,560,413)
   {
    link(Out,6233141:doCompare,[])
    Primary=[12915525,119,-133]
   }
-  Add(LineBreak,12803802,560,546)
+  Add(LineBreak,230262,560,546)
   {
    link(Out,12577997:doCompare,[])
    Primary=[16074539,119,-126]
   }
-  Add(LineBreak,762181,560,707)
+  Add(LineBreak,419150,560,707)
   {
    link(Out,7789139:doCompare,[])
    Primary=[740501,105,-154]
   }
-  Add(LineBreak,1319392,770,469)
+  Add(LineBreak,5256970,770,469)
   {
    Type=1
    link(Data,16245449:Value,[])
    Primary=[7808600,-693,266]
   }
-  Add(LineBreak,9354107,770,595)
+  Add(LineBreak,15624778,770,595)
   {
    Type=1
    link(Data,13430840:Value,[])
    Primary=[14022477,-679,161]
   }
-  Add(LineBreak,13139047,777,322)
+  Add(LineBreak,3882862,777,322)
   {
    Type=1
    link(Data,15480270:Value,[])
    Primary=[12690098,-672,455]
   }
-  Add(LineBreak,10917236,777,756)
+  Add(LineBreak,11411865,777,756)
   {
    Type=1
    link(Data,12806602:Value,[])
    Primary=[10668399,-637,42]
   }
-  Add(MultiElement,8622200,168,427)
+  Add(MultiElement,8622200,210,427)
   {
    @Hint=#44:- Не доработана распаковка файлов из масива.|67:- Необходимо для востановение поврежденных или отсутствующих файлов|
    AddHint(85,-50,179,65,@Hint)
@@ -349,13 +349,13 @@ BEGIN_SDK
      link(onFString,13138750:In,[])
      link(Str1,10222757:StreamName,[(566,156)(419,156)])
     }
-    Add(LineBreak,5745140,252,217)
+    Add(LineBreak,4670334,252,217)
     {
      Type=1
      link(Data,1027532:Var2,[])
      Primary=[15716375,154,-21]
     }
-    Add(LineBreak,13400944,308,231)
+    Add(LineBreak,16237603,308,231)
     {
      link(Out,16582589:doRead,[])
      Primary=[13138750,322,-84]
@@ -381,10 +381,10 @@ BEGIN_SDK
      link(onEvent1,6084421:doCopyFromStream,[])
      link(onEvent2,16381762:doTimer,[(504,244)(504,321)])
     }
-    Add(LineBreak,6423057,224,413)
+    Add(LineBreak,5298833,224,413)
     {
      link(Out,1694876:In,[])
-     Primary=[16464098,392,-98]
+     Primary=[16464098,399,-98]
     }
     Add(Timer,16381762,560,315)
     {
@@ -392,7 +392,7 @@ BEGIN_SDK
      AutoStop=1
      link(onTimer,16464098:In,[])
     }
-    Add(LineBreak,13082425,63,147)
+    Add(LineBreak,1440442,63,147)
     {
      link(Out,5438335:doEvent2,[(165,153)(165,111)])
      Primary=[1694876,350,266]
@@ -517,13 +517,13 @@ Add(InfoTip,15443311,14,1078)
  Width=904
  Height=1425
 }
-Add(Version,15504563,42,455)
+Add(Version,15504563,28,455)
 {
  Version="1.0"
  Description="Signature Coin"
  InternalName="Signa Coin"
 }
-Add(StyleXP,12378030,42,504)
+Add(StyleXP,12378030,28,504)
 {
 }
 Add(InfoTip,11861959,14,427)
@@ -534,7 +534,7 @@ Add(InfoTip,11861959,14,427)
 }
 Add(InfoTip,15580746,518,14)
 {
- Info=#6:Задачи|
+ Info=#6:Задачи|41:1) Подгрузка ключа для активации кошелька|24:         # Зарытый ключь|21:         # Файл ключа|
  Font=[MS Sans Serif,8,1,0,1]
  Transparent=1
  HAlign=0
@@ -621,7 +621,9 @@ Add(DS_SQLite,11668707,1547,84)
 }
 Add(MenuEx,3402726,77,1722)
 {
- Menu=#7:Кошелек|1:(|7:Майнинг|1:)|6:Помощь|1:(|11:О программе|1:-|2:22|1:)|
+ Menu=#7:Кошелек|1:(|15:Импорт кошелька|13:Экспорт ключа|1:)|9:Настройки|6:Помощь|1:(|10:Обновление|1:-|11:О программе|1:)|
+ FillBackColor=0
+ UseSeparatorColor=0
  BackColor=16777215
  LineColorDark=16777215
  SeparatorColor=16777215
@@ -675,7 +677,7 @@ BEGIN_SDK
    Font=[Arial Narrow,18,1,0,0]
    Caption="SIGNATURE blockchain"
   }
-  Add(Label,11625928,213,350)
+  Add(Label,11625928,325,469)
   {
    Left=156
    Top=335
@@ -683,14 +685,27 @@ BEGIN_SDK
    Height=20
    Color=16777215
    Font=[MS Sans Serif,10,1,0,1]
-   Caption="v 1.0.0 23"
+   Caption=""
+  }
+  Add(GlobalVar,1572156,210,420)
+  {
+   Name="VER"
+  }
+  Add(Timer,9513409,112,469)
+  {
+   link(onTimer,11816750:doData,[])
+  }
+  Add(DoData,11816750,210,469)
+  {
+   link(onEventData,11625928:doText,[])
+   link(Data,1572156:Var,[])
   }
 END_SDK
-Add(IndexToChanel,13508421,147,1722)
+Add(IndexToChanel,13508421,140,1722)
 {
- Count=5
- link(onEvent2,5040880:In,[(369,1735)(369,1623)])
- link(onEvent4,5780093:doWork1,[(341,1749)(341,1805)])
+ Count=8
+ link(onEvent2,5040880:In,[])
+ link(onEvent8,5780093:doWork1,[(310,1777)(310,1805)])
 }
 Add(ChildForm,16337389,1701,1155)
 {
@@ -720,13 +735,13 @@ BEGIN_SDK
   {
   }
 END_SDK
-Add(LineBreak,4109132,1617,1120)
+Add(LineBreak,3141763,1617,1120)
 {
  Caption="майнинг"
  link(Out,16337389:doWork1,[(1694,1126)(1694,1161)])
- Primary=[5040880,-1071,497]
+ Primary=[5040880,-1169,609]
 }
-Add(LineBreak,15414189,1582,1162)
+Add(LineBreak,15459009,1582,1162)
 {
  Caption="CAB_IU"
  link(Out,16337389:doWork2,[])
@@ -879,10 +894,10 @@ Add(Hub,6296271,784,1106)
  OutCount=3
  link(onEvent1,1797628:doWork,[])
 }
-Add(LineBreak,3792892,714,1106)
+Add(LineBreak,4551559,714,1106)
 {
  link(Out,6296271:doEvent1,[])
- Primary=[16572358,-595,63]
+ Primary=[16572358,-567,63]
 }
 Add(LineBreakEx,1797628,847,1106)
 {
@@ -900,4 +915,9 @@ Add(Message,9788010,1645,91)
 Add(GlobalVar,2873047,77,763)
 {
  Name="wallet"
+}
+Add(GlobalVar,15290339,140,455)
+{
+ Name="VER"
+ Data=String(v 1.0.0 b0827)
 }
